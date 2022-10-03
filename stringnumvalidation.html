@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript form validation - checking all letters and numbers</title>
+    <link rel='stylesheet'href="./validationStyle.css" type='text/css' />      
+</head>
+<body onload='document.form1.text1.focus()'>
+  <div class="mail">
+  <h2>Input an string</h2>
+  <form name="form1" action="#" method="post"> 
+  <ul>
+  <li><input type='text' name='text1'/></li><br><br>
+  <li class="submit">
+      <input type="submit" name="submit" value="Submit" onclick="stringvalid(document.form1.text1)"/></li><br><br>
+  </ul>
+  </form>
+  </div>
+</body>
+
+        <script>
+            
+    function stringvalid(inputtxt)
+  {
+   var letters = /^[A-Za-z]+$/;//validation for string
+   if(inputtxt.value.match(letters))
+     {
+        alert("valid string");
+      return true;
+     }
+   else
+     {
+     alert("Invalid String ");
+     return false;
+     }
+  }
+
+        </script>
+</body>
+</html>

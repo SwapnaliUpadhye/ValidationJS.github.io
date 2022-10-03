@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Validation</title>
+    <link rel="stylesheet" type="text/css" href="./validationStyle.css">
+</head>
+
+<body onload="document.form1.number.focus()">
+    <div class="mail">
+        <h1>Enter numbers only</h1>
+        <form action="#" name="form1" method="post">
+            <ul>
+                <li><input type="text" name="number"></li>
+                <li class="submit">
+                    <p></p>
+                <li><input type="submit" name="submit" onclick="numbervalid(document.form1.number)"></li>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <script>
+        function numbervalid(inputtxt) {
+            var number = /^[0-9]+$/;
+            if (inputtxt.value.match(number)) {
+                return true;
+            }
+            else {
+                alert("Please Enter your number");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

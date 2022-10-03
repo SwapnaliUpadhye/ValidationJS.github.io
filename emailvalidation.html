@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email validation</title>
+   <!--css link-->
+    <link rel='stylesheet' href='./validationStyle.css' type='text/css' />      
+</head>
+<body onload='document.form1.text1.focus()'>
+<div class="mail">
+<h2>Input an email</h2>
+<form name="form1" action="#" method="post "> 
+<ul>
+<li><input type='text' name='text1'/></li><br><br>
+<li class="submit">
+    <input type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)"/></li><br><br>
+</ul>
+</form>
+</div>
+<!--javascript file -->
+<script>
+    function ValidateEmail(inputText) {
+    // email validation characters
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (inputText.value.match(mailformat)) {
+        alert("Valid Email Address!");
+        document.form1.text1.focus();
+        return true;
+    }
+    else {
+        alert("Please Enter Valid Email Address");
+        document.form1.text1.focus();
+        return false;
+    }
+}
+</script>
+</body>
+</html>
